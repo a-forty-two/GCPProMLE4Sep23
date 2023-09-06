@@ -1,0 +1,118 @@
+Let’s say you are an analyst at a bank. Your model has rejected a loan application, and your bank has asked you to tell why the application is rejected. What model property do you look for?
+A) Traceability
+
+B) Adaptability 
+
+C) Explainability 
+
+D) Visualizations
+
+Ans: C-> local feature importance could help identify the top features due to which application was rejected
+
+
+
+
+https://www.youtube.com/watch?v=qTUUwfG1vSs
+
+
+https://pair-code.github.io/lit/
+
+
+AUC ROC- 
+
+Care equally about all classes -> AUC ROC
+
+Sourav chakravarti to Everyone (6 Sep 2023, 9:40 AM)
+receiver operating criterion
+
+Ankit Singh to Everyone (6 Sep 2023, 9:41 AM)
+it basically give the performance graph  at different threshold for a classsifcation model
+
+———
+
+
+Severe imbalance in data-> one class is overrepresented; other class(es) are underrepresented 
+	- F1 Score 
+
+
+———
+
+Entropy:
+1. Binary cross entropy
+2. Categorical cross-entropy
+3. Sparse Categorical Cross Entropy 
+
+
+
+————
+In order to clean the data: 
+1. If data is in warehouse (BQ)- perform feature engineering there itself
+
+2. If data is at rest or motion anywhere except #1 - use DataFlow
+
+DataFlow->  Managed Apache Beam Environment
+BEAM -> Batch + strEAM 
+    -> Single code block (either Py or Java) builds your data cleaning pipeline for both data at REST and in MOTION
+    -> GCS or Pub/SUb or on premise or AWS -> use DataFlow to perform any form of data cleaning or ETL 
+
+
+dirty_data 
+
+#wrong syntax, idea is to explain the layout of a pipeline)
+clean_data = beam.pipeline as p( dirty_data |
+                  clean_missing_values | 
+                  Z-score    |
+                  train_test_split |
+                  train_to_GCS |
+                  val_to_GCS )
+
+You want to perform ETL operations and clean the data. 
+But your team prefers a no-code module where their data analysts can perform statistical cleaning.
+Which tool would you use?
+  A) AutoML
+  B) DataFlow
+  C) Data Fusion 
+  D) Dataprep 
+
+Data Fusion is a NO CODE ETL/ELT tool which lets you build visual flowcharts which then build a dataflow pipeline in the background!!!!
+
+Why is dataprep wrong answer here?
+    - Dataprep to be used along with Vertex AI 
+
+Data Fusion cannot be used for ML activities -> it can clean and dump your data at a preferred location (including a Vertex AI dataset!)
+Now DataPrep could have been now used to perform EDA on this clean data!
+
+
+
+If you were working exclusively in TensorFlow, then we would use TensorFlow extended (TFX) 
+      -> VALIDATION API to find cleaniless of the data 
+
+
+
+You have TEXT stored in a big query table. 
+You want to find sentiment of these sentences and store the sentiments along with the sentence in a new table. 
+Which tool do you use?
+
+A. Data Fusion
+B. Big Query itself
+C. Extract to GCS, use VertexAI, load into BQ again
+D. Extract using dataflow, call NL APIs, and store the result back into a new BQ table 
+
+D-> Big Query even though has a lot of ML capabilities (regression, classification, AutoML, TensorFlow)
+          -> it does NOT support Computer Vision and Natural Language Processing 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
+
+
