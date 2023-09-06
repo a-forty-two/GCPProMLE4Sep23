@@ -103,6 +103,18 @@ D-> Big Query even though has a lot of ML capabilities (regression, classificati
 
 
 
+In order to protect PII information- https://cloud.google.com/dlp/demo/#!/
+DLP- Data Loss Prevention API 
+
+DLP api-> the best place to use-> within DataFlow as an API call!
+
+
+Quarantine Data (raw data with PII)
+	-> data flow will connect to this quarantine bucket
+	-> then it call DLP API 
+		-> 1 pipeline with 2 outputs
+			-> with PII data written into a new bucket for admins (raw data- optional)
+			-> without PII data written into new bucket for analysts (masked data!)
 
 
 
