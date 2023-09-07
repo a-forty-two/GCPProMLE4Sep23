@@ -119,6 +119,17 @@ Quarantine Data (raw data with PII)
 
 
 
+Complete picture of DLP + Vertex AI notebooks: 
+https://cloud.google.com/architecture/protecting-confidential-data-in-ai-platform-notebooks
+
+You dataset contains sensitive information-> Name, street_lifestyle, religion, marital status, gender -> banking app 
+Dataset doesnt lose this info but doesn't reveal as a biasing feature also?
+	-> Feature crosses with 1-Hot encoding 
+	-> why not delete it? because historically they are PART of datasets and impacting the decision in mathematical ways 
+
+
+logitude, latidude, cars -> bins of lat/long -> create a single cross-feature with cars-> 1 feature representing the car in an area (lat-long)
+
 
 
 
