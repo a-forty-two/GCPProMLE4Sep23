@@ -1,0 +1,15 @@
+Polynomial kernels example (SVM): https://www.youtube.com/watch?v=OdlNM96sHio
+
+For discrete data points-> Categorical Cross-entropy also known as Log Loss. Them minus sign indicates its a LOSS not a profit. 
+
+For continuous data point if you need classification-> SPARSE CATEGORICAL CROSS ENTROPY or Sparse Log Loss 
+
+cross entropy/loss loss: 
+
+  https://dasha.ai/en-us/blog/log-loss-function#:~:text=After%20taking%20the%20logarithm%20of,the%20%22logistic%20error%20function%22
+  
+  https://towardsdatascience.com/understanding-binary-cross-entropy-log-loss-a-visual-explanation-a3ac6025181a
+
+
+10 mins to pandas: https://pandas.pydata.org/docs/user_guide/10min.html
+
