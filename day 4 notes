@@ -13,3 +13,70 @@ cross entropy/loss loss:
 
 10 mins to pandas: https://pandas.pydata.org/docs/user_guide/10min.html
 
+Parameters: weights and bias 
+2 types of parameters:
+  1. Trainable Parameters-> values are going to be adjusted during training
+  2. Non Trainable -> during training their values CAN't be adjusted 
+              
+tf.variable -> weights and bias 
+
+tf.constant -> values that CANNOT BE ADJUSTED-> as they are read-only 
+            -> columns from your table (ACTUAL DATA THAT IS BEING LEARNT UPON)
+
+
+y = m1x1 + m2x2 + m3x3 + b
+
+tf.constant -> x1,x2,x3 (features or dimensions)
+tf.variable -> m1,m2,m3,b (Parameters)
+
+to reduce to error per epoch/iteration of learning: we use LOSS and OPTIMIZER functions
+
+LOSS FUNCTION-> calculates how to know the error 
+                -> MSE, RMSE, MAE, Cross Entropy
+
+
+OPTIMIZER FUNCTION-> calculates how to reduce the error
+                -> GD, AdaGRAD, ADAM, RMSProp
+
+
+initialLR -> initial learning rate with which we start to train our model 
+finalLR -> if i have found the BEST possible answer, then I don't want any further movement
+            -> if my lr = 0, then there will be NO FURTHER movement 
+retardation rate = decay rate = negative acceleration 
+
+v = u + at 
+
+final_LR = initial_LR - retardation_rate * epoch 
+
+finalLR = initLR - retardation_rate * epoch 
+retardation_rate = ( initLR - finalLR ) / epoch 
+
+we want finalLR to be 0,
+
+retardation_rate = (initLR - 0)/epoch = initialLR / epochs 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
