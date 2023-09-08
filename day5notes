@@ -16,3 +16,42 @@ standalone BigQuery -> Model training and deployment (within BigQuery only) -> N
 
 prod grade event scheduling (SQL Jobs) for ML and for batch predictions-> use BigQuery
 
+Cross Validation Score-> K-fold, Monte Carlo 
+Benefits-> HELPS DETECT overfitting
+Challenges-> time to train
+
+
+25 people-> Blue 
+
+5-5-5-5-5
+
+3-blue-2-green -> blue
+4-red-1-green -> red
+4-green-1-red -> green           
+3-blue-1-red-1green -> blue
+3-blue-2red  -> blue
+
+Blue-> 9 people; red-8; green- 8 
+
+Cross validation during training: https://datascience.stackexchange.com/questions/110174/validation-loss-not-decreasing-using-dense-layers-altough-training-and-validatio
+Note: Observe model.fit with validation_data 
+
+How to calculate weights:
+
+Embedding: HIDDEN MEANING-> embedding (x, y) -> total weights generated = x * y
+      -> total trainable parameters = ONLY weights = because embedding is NOT an approximate adjustment; its an exact vector calculation
+      -> there are 0 biases generated for embedding layer!
+        -> embedding (10000, 50) => 500,000 vectors!
+
+Dense: Deep Learning happens here-> y = mx + c
+        -> total trainable parameters in Dense layer = input X output + output
+
+        ->total weights = input X output
+        -> bias = output only 
+
+
+
+
+
+
+
