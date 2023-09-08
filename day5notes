@@ -1,2 +1,18 @@
 Tensorflow playground solution:
   https://playground.tensorflow.org/#activation=tanh&regularization=L1&batchSize=10&dataset=spiral&regDataset=reg-plane&learningRate=0.01&regularizationRate=0&noise=0&networkShape=4,2&seed=0.40021&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=true&cosY=false&sinY=true&collectStats=false&problem=classification&initZero=false&hideText=false
+
+On premise -> HDFS (storage) + Hive for schema/analytics
+
+On cloud-> GCS (storage) + BigQuery for schema/analytics
+
+GCS -> HDFS compliant. This means-> 
+1) in your spark or other programs, just replace hdfs:// with gs:// 
+2) copy-paste all your HDFS data into the right bucket name in gs://
+3) Run your programs as-is!
+
+BigQuery + Vertex AI-> Pipelines, Endpoints, Model monitoring 
+
+standalone BigQuery -> Model training and deployment (within BigQuery only) -> NOT be able to build pipelines or monitor without Vertex AI
+
+prod grade event scheduling (SQL Jobs) for ML and for batch predictions-> use BigQuery
+
