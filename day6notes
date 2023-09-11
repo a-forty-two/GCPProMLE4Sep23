@@ -23,3 +23,63 @@ binary cross entropy-> binary classification
   Categorical cross entropy
 
   Sparse Categorical cross entropy 
+
+
+
+__iter__ and __next__ -> https://www.w3schools.com/python/python_iterators.asp
+backbone of tf.data API -> they are the pointers navigating your data in parallel pipelines!
+
+
+
+
+
+Designing the network:
+1. you cannot manipulate the FIRST and the LAST layer:
+  a. Input Layer- First layer- always driven by input (features-> x)
+        ----- everything in between is hidden layer------
+  b. Output Layer- Last layer- always driven by output (label -> y)
+          DenseX --- DenseY --- DenseZ (I/P layer-> DenseX, O/P Layer-> DenseZ, hidden-> DenseY)
+          Input----ReLU---randomLayer----Dense (I/P-> input, o/p-> Dense, hidden-> ReLU + randomLayer)
+
+
+2. Dense layers (at least 2 form deep learning, just 1 forms machine learning)
+    a. Dense layers accept only VECTORS as their inputs!
+    b. Fully Connected Layers-> every output from previous layer is connected to every input on present Dense layer
+
+
+    problem: images aren't vectors-> they are an array of vectors, where each vector represents 1 row of image
+            -> MATRIX -> how images are represented (grayscale)
+            -> 4-rank tensor-> colored images (channel, channel_sequence)
+                            -> channel_first (you mention channel count as first element), (3, R,G,B)
+                            -> channel_last (R, G, B, 3) 
+    solution: reshape them!-> form single channels of vectors/rows instead of taking entire image at onc
+
+3. Convolutional layers-> 1D, 2D, 3D...
+      a. Not fully connected; partially connected
+      b. dependening on 1D, 2D ... -> input shape is adjusted
+            images-> Conv2D; sentences-> Conv1D
+
+4. Flatten-> reshapes 2D input into 1D [for example-> an image into vector sequence for dense layers]
+
+Deep Learning-> always be 2 Dense Layers in the end!
+Transfer learning-> choped my network-> given you everything from beginning till last-2 layers!
+        -> you will take my network as-is, and add layers and activation functions of your choice
+                  -> if you train the whole network-> the weights that I gave you will also get updated!
+                  -> we will make the W and B from my network as NON TRAINABLE PARAMETERS
+                        -> during learning YOUR layers will get updated; MINE layers will stay as-is 
+
+Parametrs = Weights + Bias
+trainable parameters-> during BP, the dw/dt will happen, and weights get adjusted
+non-trainable parameters-> during BP, nothing happens and all changes will be ignored
+
+Output what activation function to put:
+
+1. you want the output as-is or Regression -> LINEAR ( y = x) 
+2. You want only positive numbers-> ReLU (y = max(0,x))
+3. You want BINARY PROBABILISTIC/Log-loss classification-> SIGMOID 
+4. You want MUlTI-CLASS LOGISTIC CLASSIFICATION or discrete numbers-> SOFTMAX 
+5. You want BINARY or MULTI-CLASS PROBABILISTIC CLASSIFICATION or continuous numbers-> TANH
+6. You want your output in -1 to 1 (profit and loss) -> TANH 
+
+
+
