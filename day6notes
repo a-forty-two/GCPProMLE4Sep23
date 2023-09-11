@@ -1,0 +1,25 @@
+Total trainable parameters = weights + bias
+
+In embedding layer-> only weights, no bias-> exact math, not approximation 
+
+In Dense layer-> learning happens-> weights and bias-> 
+
+
+weights = inputs * outputs
+bias = output 
+
+binary cross entropy:: https://towardsdatascience.com/understanding-binary-cross-entropy-log-loss-a-visual-explanation-a3ac6025181a
+
+  2 classes -> Y and not Y 
+
+  Y = Y
+  not Y = 1 - y 
+
+
+summation ( y.log(p(y)) + (1-y) log(1-p(y)) ) / avg 
+
+binary cross entropy-> binary classification 
+
+  Categorical cross entropy
+
+  Sparse Categorical cross entropy 
