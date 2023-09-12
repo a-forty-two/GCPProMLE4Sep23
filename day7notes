@@ -1,0 +1,2 @@
+Columns -> [lat, long, car sold]
+Feature -> binning of lat and long -> feature cross on these bins X car sold -> single feature called car_sold_in_area
