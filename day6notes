@@ -83,3 +83,33 @@ Output what activation function to put:
 
 
 
+
+FUNCTIONAL LAYERS:
+
+encoder_input = keras.Input(shape=(28, 28, 1), name='img')
+x = layers.Dense(16, activation='relu')(encoder_input)
+y = layers.Dense(10, activation='relu')(x)
+z = layers.Dense(5, activation='relu')(y)
+encoder_output = layers.Dense(3, activation='relu')(z)
+
+encoder = keras.Model(encoder_input, encoder_output, name='encoder')
+
+a = layers.Dense(5, activation='relu')(encoder_output)
+b = layers.Dense(10, activation='relu')(a)
+c = layers.Dense(16, activation='relu')(b)
+decoder_output = layers.Dense(28, activation='linear')(c)
+
+autoencoder = keras.Model(encoder_input, decoder_output, name='autoencoder')
+
+
+
+
+
+
+
+
+
+
+
+
+
