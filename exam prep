@@ -1,0 +1,14 @@
+Pub/Sub -> pub sub can’t deal with late arrival of data, out of order data, and data packets have been damaged
+Correct approach->
+
+PUB/SUB ——> DataFlow ——> anywhere else
+
+Normalize:
+Sigmoid-> 0-1. MinMax -> 0-1, Z-Score-> -3 to +3, tanh-> -1 to +1
+
+
+Binning-> group the data into a single feature
+          -> lat / long 
+
+Time/temporal values-> normalization?
+            Cyclic-> sin theta/cos theta 
